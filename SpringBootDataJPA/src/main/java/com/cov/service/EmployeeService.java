@@ -16,9 +16,7 @@ public class EmployeeService {
 	EmployeeRepo employeeRepository;
 
 	public List<Employee> findAll() {
-// List<Employee> employee=new ArrayList<Employee>();
 		return (List<Employee>) employeeRepository.findAll();
-// return employee;
 
 	}
 
