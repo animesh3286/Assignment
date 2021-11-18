@@ -10,12 +10,12 @@
 </head>
 <body>
 	<h2>Department Details</h2>
-	<table border="3" bgcolor="#FFB6C1" style="text-align: center;">
+	<table border="3" bgcolor="#FFFFFF" style="text-align: center;">
 		<tr>
 			<th>ID</th>
 			<th>Name</th>
 			<th>Edit</th>
-			<th>Delete</th>
+			
 		</tr>
 
 		<%
@@ -29,7 +29,6 @@
 			<td><%=dept.getId()%></td>
 			<td><%=dept.getName()%></td>
 			<td><a href="editDept?id=<%=dept.getId()%>">Edit</a></td>
-			<td><a href="deleteDept?id=<%=dept.getId()%>">Delete</a></td>
 		</tr>
 
 		<%

@@ -15,8 +15,10 @@
 		<form:input path="name" />
 		<br>
 		<br>
-		<input type="submit" value="Register">
+		<input type="submit" value="Register"><br><br>
 	</form:form>
+	<a href="getDepts">List of all Department</a><br><br>
+	<a href="/">Back</a>
 </body>
 </html>
 
