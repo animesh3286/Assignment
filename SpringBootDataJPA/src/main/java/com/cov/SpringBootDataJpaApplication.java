@@ -13,7 +13,6 @@ import com.cov.beans.Employee;
 import com.cov.service.DepartmentService;
 import com.cov.service.EmployeeService;
 
-import net.bytebuddy.dynamic.loading.ClassLoadingStrategy.Configurable;
 
 @SpringBootApplication
 public class SpringBootDataJpaApplication {
