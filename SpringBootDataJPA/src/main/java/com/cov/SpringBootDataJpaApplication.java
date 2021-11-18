@@ -21,7 +21,7 @@ public class SpringBootDataJpaApplication {
 		ConfigurableApplicationContext ctxt = SpringApplication.run(SpringBootDataJpaApplication.class, args);
 		Department department1 = new Department(1, "Java");
 		Department department2 = new Department(2, "c");
-		Employee employee1 = new Employee(101, "Anirudha", department1);
+		Employee employee1 = new Employee(101, "Animesh", department1);
 		Employee employee2 = new Employee(102, "Aniket", department1);
 		Employee employee3 = new Employee(103, "Ankita", department2);
 		Employee employee4 = new Employee(104, "Arpita", department2);

@@ -8,8 +8,8 @@
 </head>
 <body>
 <h1> Welcome Animesh</h1>
-<a href="Employee">Employee</a><br><br>
-<a href="Department">Department</a><br><br>
+<a href="regemps">Employee</a><br><br>
+<a href="regdept">Department</a><br><br>
 
 </body>
 </html>
