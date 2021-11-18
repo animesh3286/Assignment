@@ -11,14 +11,32 @@
 <title>REgistration Page</title>
 </head>
 <body>
-	<form:form action="regEmp" method="post" modelAttribute="employee">
-		<br>
-		<br>
+	<form:form action="regemp" method="post" modelAttribute="employee">
+		<!-- <form:label path="id">ID</form:label>
+<form:input path="id" />
+<br>
+<br> -->
 		<form:label path="name">Name</form:label>
 		<form:input path="name" />
 		<br>
 		<br>
-		
+		<%
+		DepartmentService departmentService = (DepartmentService) request.getAttribute("departmentService");
+		List<Department> departments = departmentService.findAll();
+		%>
+		<form:label path="department">Department</form:label>
+		<form:select path="department">
+			<form:option value="0">--Select--</form:option>
+			<%
+			for (Department department : departments) {
+			%>
+			<form:option value="<%= department %>"><%=department.getName()%></form:option>
+			<%
+			}
+			%>
+		</form:select>
+
+
 		<input type="submit" value="Register">
 	</form:form>
 	<br>
@@ -26,5 +44,10 @@
 	<a href="/">Home</a>
 	<br>
 	<br>
+
+
+
+
+
 </body>
 </html>
