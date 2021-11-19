@@ -11,6 +11,12 @@
 <title>REgistration Page</title>
 </head>
 <body>
+
+<br>
+	<br>
+	<a href="showemp"><button>Show Employee</button></a>
+	<br>
+	<br>
 	<form:form action="regemp" method="post" modelAttribute="employee">
 		<!-- <form:label path="id">ID</form:label>
 <form:input path="id" />
