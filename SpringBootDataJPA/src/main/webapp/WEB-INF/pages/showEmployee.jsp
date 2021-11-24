@@ -40,8 +40,5 @@
 	<a href="regemp">Register Employees</a>
 	<br>
 	<br>
-
-
-
 </body>
 </html>

@@ -13,4 +13,7 @@ public interface EmployeeRepo extends CrudRepository<Employee, Integer> {
 	
 	List<Employee> findByDepartment(Department department);
 
+	List<Employee> findAllEmployeeDeptno(int deptno);
+
+
 }

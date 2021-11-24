@@ -8,11 +8,7 @@
 
 <title>Home</title>
 
-
-
 </head>
-
-
 <body bgcolor="DADDFC">
 <h1 style="background-color:DodgerBlue;" align="Center">  Welcome Animesh</h1>
 <h1 style="background-color:White;" align="Center">  Welcome to Covalense Family</h1>
@@ -23,6 +19,9 @@
 		style="border:BLACK 2px SOLID">
 		Emerge,Innovate,Excel
 	</marquee>
+	
+	<br>
+	<br>
 
 <a href="regemp"><button>Employee</button></a>
 	<br>

@@ -14,7 +14,7 @@
 
 <br>
 	<br>
-	<a href="showemp"><button>Show Employee</button></a>
+	<a href="getemps"><button>Show Employee</button></a>
 	<br>
 	<br>
 	<form:form action="regemp" method="post" modelAttribute="employee">
