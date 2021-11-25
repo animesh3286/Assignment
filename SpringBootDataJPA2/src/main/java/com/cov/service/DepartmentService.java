@@ -7,29 +7,25 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cov.beans.Department;
-import com.cov.beans.Employee;
 import com.cov.exception.InvalidDepartmentIdException;
-import com.cov.exception.InvalidEmployeeIdException;
-import com.cov.repo.DepartmentRepo;
-
+import com.cov.repository.DepartmentRepo;
 
 @Service
 public class DepartmentService {
 	Logger logger = Logger.getLogger(DepartmentService.class);
 	@Autowired
-	DepartmentRepo departmentRepo;
+	DepartmentRepo departmentRepository;
 
-	//public List<Department> findAll() {
+	public List<Department> findAll() {
 // List<Employee> employee=new ArrayList<Employee>();
-		//logger.info("finding all departments");
-		//return DepartmentRepo.findAll();
-		//return DepartmentRepo.findAll();
+		logger.info("finding all departments");
+		return departmentRepository.findAll();
 // return employee;
-	//}
+	}
 
 	public Department findById(int id) throws InvalidDepartmentIdException {
 		logger.info("finding a department with id: " + id);
-		Optional<Department> deptOptional = departmentRepo.findById(id);
+		Optional<Department> deptOptional = departmentRepository.findById(id);
 		InvalidDepartmentIdException invalidDepartmentIdException = new InvalidDepartmentIdException(
 				"Department id not found");
 		logger.warn(invalidDepartmentIdException);
@@ -46,12 +42,12 @@ public class DepartmentService {
 		InvalidDepartmentIdException invalidDepartmentIdException = new InvalidDepartmentIdException(
 				"Department id not found");
 		logger.warn(invalidDepartmentIdException);
-		return departmentRepo.save(department);
+		return departmentRepository.save(department);
 	}
 
 	public Department update(Department department) throws InvalidDepartmentIdException {
 		logger.info("Updating departments ");
-		Optional<Department> deptOptional = departmentRepo.findById(department.getId());
+		Optional<Department> deptOptional = departmentRepository.findById(department.getId());
 		InvalidDepartmentIdException invalidDepartmentIdException = new InvalidDepartmentIdException(
 				"Department id not found");
 		logger.warn(invalidDepartmentIdException);
@@ -60,12 +56,12 @@ public class DepartmentService {
 					"Department Id" + department.getId() + "not existing in reposiotory");
 		}
 		logger.info("Department updated is" + department.getId() + " " + department.getName());
-		return departmentRepo.save(department);
+		return departmentRepository.save(department);
 	}
 
 	public Department delete(int id) throws InvalidDepartmentIdException {
 		logger.info("Deleting department with id " + id);
-		Optional<Department> deptOptional = departmentRepo.findById(id);
+		Optional<Department> deptOptional = departmentRepository.findById(id);
 		InvalidDepartmentIdException invalidDepartmentIdException = new InvalidDepartmentIdException(
 				"Department id not found");
 		logger.warn(invalidDepartmentIdException);
@@ -73,13 +69,8 @@ public class DepartmentService {
 			throw new InvalidDepartmentIdException("Department Id " + id + "not existing in repository");
 		}
 		Department department = deptOptional.get();
-		departmentRepo.deleteById(id);
+		departmentRepository.deleteById(id);
 		logger.info("Department deleted is with id " + id + " " + department.getName());
 		return department;
-	}
-
-	public Object findAll() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

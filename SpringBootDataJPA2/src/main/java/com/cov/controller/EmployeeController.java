@@ -50,7 +50,7 @@ public class EmployeeController {
 	@RequestMapping(value = "getemps", method = RequestMethod.GET)
 	public ModelAndView findEmployeeAll() throws InvalidEmployeeIdException {
 		ModelAndView modelAndView = new ModelAndView("showEmployee");
-		List<Employee> emps = EmployeeService.findAll();
+		List<Employee> emps = employeeService.findAll();
 		modelAndView.addObject("emps", emps);
 		return modelAndView;
 	}
@@ -73,13 +73,11 @@ public class EmployeeController {
 
 	}
 
-
 	@RequestMapping(value = "deleteEmp")
 	public ModelAndView deleteEmp(@RequestParam int id) throws InvalidEmployeeIdException {
-	employeeService.delete(id);
-	ModelAndView modelAndView = new ModelAndView("redirect:" + "getEmp");
-	return modelAndView;
+		employeeService.delete(id);
+		ModelAndView modelAndView = new ModelAndView("redirect:" + "getEmp");
+		return modelAndView;
 	}
 
 }
-

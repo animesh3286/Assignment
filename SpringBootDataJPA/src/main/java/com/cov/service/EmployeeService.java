@@ -76,6 +76,11 @@ public class EmployeeService {
 		return employee;
 	}
 
+	public static List<Employee> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 //	public List<Employee> findAllByDeptno(int deptno) throws InvalidDepartmentIdException {
 //
 //		List<Employee> employee = employeeRepo.findAllEmployeeDeptno(int deptno);
